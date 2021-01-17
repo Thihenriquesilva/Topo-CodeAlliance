@@ -36,7 +36,13 @@ GO
 INSERT INTO Area (NomeArea)
 VALUES		('Desenvolvimento'),
 			('Redes'),
-			('Multimídia');
+			('Multimídia'),
+			('Engenharia de softwere'),
+			('Analista de dados'),
+			('Especialista financeiro'),
+			('Assistente de pedreiro'),
+			('Instrumentos musicais'),
+			('Educação');
 GO
 
 INSERT INTO TipoRegimePresencial(NomeTipoRegimePresencial)
@@ -45,40 +51,15 @@ VALUES		('Presencial'),
 			('Remoto');
 GO
 
-INSERT INTO Curso (NomeCurso, TipoCurso,IdArea)
-VALUES		('Desenvolvimento de Sistemas - 1T - M', 'Técnico',1),
-			('Desenvolvimento de Sistemas - 2T - M', 'Técnico',1),
-			('Desenvolvimento de Sistemas - 3T - M', 'Técnico',1),
-			('Desenvolvimento de Sistemas - 1T - T', 'Técnico',1),
-			('Desenvolvimento de Sistemas - 2T - T', 'Técnico',1),
-			('Desenvolvimento de Sistemas - 3T - T', 'Técnico',1),
-			('Redes de Computadores - 1T - M', 'Técnico',2),
-			('Redes de Computadores - 2T - M', 'Técnico',2),
-			('Redes de Computadores - 3T - M', 'Técnico',2),
-			('Redes de Computadores - 1T - T', 'Técnico',2),
-			('Redes de Computadores - 2T - T', 'Técnico',2),
-			('Redes de Computadores - 3T - T', 'Técnico',2),
-			('Multimídia - 1T - M', 'Técnico',3),
-			('Multimídia - 2T - M', 'Técnico',3),
-			('Multimídia - 3T - M', 'Técnico',3),
-			('Multimídia - 1T - T', 'Técnico',3),
-			('Multimídia - 2T - T', 'Técnico',3),
-			('Multimídia - 3T - T', 'Técnico',3)
-GO
-
-
+--Só consegui pensar em tecnologias na area de softwer '-'
 
 INSERT INTO Tecnologia (NomeTecnologia)
 VALUES		('Não definido'),
 			('Vue.Js'),
 			('Firebase'),
 			('SQL Server'),
-			('C'),
 			('Entity framework'),
 			('Windows Form'),
-			('React Native'),
-			('MVC'),
-			('API'),
 			('AWS Cloud'),
 			('PHP'),
 			('Java'),
@@ -90,30 +71,8 @@ VALUES		('Não definido'),
 			('Git'),
 			('GitHub'),
 			('Devops'),
-			('Andriod'),
-			('IOS'),
-			('Figma'),
-			('AdobeXD'),
-			('RESTfull'),
-			('Trello'),
-			('PhotoShop'),
-			('Node.Js'),
-			('Bootstrap'),
-			('jQuery'),
-			('Ajax'),
-			('MongoDB'),
-			('TypeScript'),
-			('Scrum'),
 			('Redux'),
-			('CSharp'),
-			('C++'),
-			('Flutter'),
-			('ReactJs'),
-			('Xamarin'),
-			('JavaScript'),
-			('Dart'),
-			('Ruby'),
-			('.NET');
+			('CSharp')
 GO
 
 INSERT INTO Usuario (Email, Senha, IdTipoUsuario,PerguntaSeguranca,RespostaSeguranca)
