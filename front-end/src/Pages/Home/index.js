@@ -7,11 +7,12 @@ import AccessBar from "../../Components/AccessBar";
 import AccessMenu from "../../Components/AccessMenu";
 import Tag from "../../Components/Tag/Index";
 import Svg from "../../Components/imgsvg/Index";
-import Confidence from "../../Components/imgsvg/confidence";
+import Colabora from "../../Components/imgsvg/group";
 import Surprise from "../../Components/imgsvg/surprise";
 
 import imgPadrao from "../../assets/android-character-symbol.webp";
 import imgPerfil from "../../assets/perfil-comportamental-online.webp";
+import imgHome from "../../assets/bg-home.png";
 
 import "./style.css";
 
@@ -22,60 +23,47 @@ export default function Home() {
       <AccessBar />
       <Header />
       <AccessMenu />
-      <div className="bodyPart">
+      <div className="bodyPart" id="conteudo">
+        <div className="flex">
         <div className="StartImage">
           <div className="StartText">
-            <h1>Bem-vindo ao SENAI TechVagas!</h1>
+            <h1>Seja bem vindo ao Tranquilo Jobs</h1>
             <p>
-              O site de emprego que oferece as melhores vagas de tecnologia da
-              informação!
+              Você é novo por aqui?
             </p>
           </div>
           <br />
           <br />
           <br />
-          <h3>Dê o seu primeiro passo:</h3>
+          {/* <h3>Então venha fazer seu cadastro !!</h3> */}
+          <h3>Então venha e faça seu cadastro:</h3>
 
           <div className="EmpresaCandidato">
-            <div className="Empresa">
-              <p>Empresas com interesse de divulgar <br />oportunidades</p>
-              <br />
-              <div>
-                <Link to="/cadastro/empresa">
-                  <button className="BtnStartEmpresa">
-                    <h2>EMPRESA</h2>
-                  </button>
-                </Link>
-              </div>
-            </div>
-
             <div className="Candidato">
-              <p>Alunos que escolheram ingressar<br />no curso</p>
-              <br />
               <div>
                 <Link to="/cadastro">
                   <button className="BtnStartCandidato">
-                    <h2>CANDIDATO</h2>
+                    <h2>CADASTRE-SE</h2>
                   </button>
                 </Link>
               </div>
             </div>
           </div>
+          </div>
+            <img src={imgHome} alt="Duas pessoas planejando um quadro" />
         </div>
+        <div className="twosec">
+          <h2>Nossos valores</h2>
         <div className="Imagens">
           <div className="ColumnImages">
-            <Svg />
-            <h2>Profissionalismo</h2>
-            <p>Um dos principais pilares da nossa<br />
-            aplicação, demonstramos o  nosso<br />
-            compromisso com o aluno e com a empresa</p>
+            <Colabora />
+            <h2>Coletividade</h2>
+            <p>Contamos com o apoio de todos que nossa plataforma continue a crescer</p>
           </div>
           <div className="ColumnImages">
-            <Confidence />
-            <h2>Confiança</h2>
-            <p>Taxa de empregabilidade supera 80% entre<br />
-            profissionais que concluíram cursos em <br />
-            áreas da tecnologia da informação</p>
+            <Svg />
+            <h2>Acessível</h2>
+            <p></p>
           </div>
           <div className="ColumnImages">
             <Surprise />
@@ -83,6 +71,7 @@ export default function Home() {
             <p>Quando você menos espera:<br />
             Você foi aceito! A plataforma faz com <br />
             que você trabalhe seus potenciais</p>
+          </div>
           </div>
         </div>
         <div className="QuadroDeVagas">

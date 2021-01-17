@@ -13,7 +13,7 @@
 
 a {
     text-decoration: unset;
-    color: #2A2E32;
+    color: #373737;
     font-weight: 800;
     font-size: 1.2vw;
 }
@@ -51,10 +51,12 @@ ul {
 li > a {
     text-decoration: unset;
     margin-right: 3vw;
+    color: #181818;
 }
 
 .logo {
     width: 20vw;
+    fill: white;
 }
 
 .none, .access-button, .pop-up {
@@ -65,7 +67,7 @@ li > a {
 
 .botao, .botao1 {
     padding: 1vw;
-    background: #2A2E32;
+    background: #181818;
     color: white;
     margin-left: .2vw;
     display: flex;
@@ -76,7 +78,7 @@ li > a {
 
 .botao1 {
     margin-left: unset;
-    background: red;
+    background: #3daf4f;
 }
 
 .burguer {
@@ -146,7 +148,7 @@ li > a {
   }
   
   #menu-hide > li > a{
-    color: #2A2E32;
+    color: #373737;
     font-size: 3vw;
     border-radius: .8vw;
   }
@@ -158,7 +160,7 @@ li > a {
     margin-right: 1vw;
   }
   .botao{
-    background: #2A2E32;
+    background: #373737;
     margin: unset;
   }
   .botao, .botao1{

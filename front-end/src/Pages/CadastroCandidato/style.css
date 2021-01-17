@@ -141,11 +141,11 @@ body > div.registerApplicant > div.box-form > div > div > button > label{
 }
 
 body > div.registerApplicant > div.box-form > div > h1{
-  color: red;
+  color: #3daf4f;
 }
 
 body > div.registerApplicant > div.box-form > div > form > div.form-button > button{
-  background-color: red;
+  background-color: #3daf4f;
 }
 
 @media (max-width: 900px) {
@@ -179,7 +179,7 @@ body > div.registerApplicant > div.box-form > div > form > div.form-button > but
 body > div.registerApplicant > div.box-form > div > div > button > label,
 body > div.registerCompany > div.box-form > div > div > button > label{
   padding: 5% 20%;
-  background: red;
+  background: #3daf4f;
   border-radius: 6px;
   cursor: pointer;
 }

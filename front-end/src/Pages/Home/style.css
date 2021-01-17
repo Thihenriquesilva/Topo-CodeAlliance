@@ -3,18 +3,25 @@
   height: 100px;
 }
 
+.teste{
+  width: 100px;
+  height: 100px;
+}
+
 .ColumnImages {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Imagens {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.twosec{
   padding: 5vh;
+}
+
+.Imagens {
+  display: grid;
   flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .textBox {
@@ -146,8 +153,9 @@ font-weight: bold;
 
 .EmpresaCandidato {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   margin-top: 40px;
+  margin-left: 10vw;
 }
 
 .Empresa,
@@ -157,24 +165,36 @@ font-weight: bold;
   text-align: center;
 }
 
-.StartImage {
-  text-align: center;
-  background-image: url("../../assets/esperoquesejaessetamanho.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: white;
+.StartImage{
+  text-align: left;
+  color: #181818;
   padding: 5vh;
+  background-repeat: no-repeat;
+  background-position: right;
+  vertical-align: baseline;
 }
 
 .BtnStartCandidato {
   width: 152px;
   height: 50px;
-  background: linear-gradient(262.72deg, #ff000f 7.13%, #873040 93.87%);
-  border: 3px solid #ffffff;
+  background-color: transparent;
   box-sizing: border-box;
+  border: 2px solid rgba(24, 24, 24,0.8);
   border-radius: 30px;
-  color: white;
+  color: rgba(24, 24, 24,0.8);
+  font-weight: bold;
+}
+
+.BtnStartCandidato:hover{
+  background-color: #74e5e1;
+  color: #181818;
+  border: 2px solid #181818;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.BtnStartCandidato > h2{
+  font-size:1.3em;
 }
 
 .BtnStartEmpresa {
@@ -205,6 +225,11 @@ body
   > button ,
   #root > div > div.bodyPart > div.QuadroDeVagas > div > div:nth-child(n) > div.LinkVaga > h4{
   cursor: pointer;
+}
+
+#conteudo > div.twosec > h2{
+  text-align: center;
+  padding: 5vw 0;
 }
 
 /* Access */

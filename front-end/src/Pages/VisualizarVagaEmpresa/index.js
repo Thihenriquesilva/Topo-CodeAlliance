@@ -16,110 +16,12 @@ import imgFuncao from "../../assets/rocket-launch.webp";
 import IconEmpresa from "../../assets/building.webp";
 import InfoVaga from "../../Components/InfoVaga/Index";
 
-import { uri } from "../../services/conexao";
+import user from '../../assets/images/user.webp'
 
 import "./style.css";
 
 export default function VizualizarVagaEmpresa() {
-  const [Experiencia, setExperiencia] = useState("");
-  const [TipoContrato, setTipoContrato] = useState("");
-  const [Salario, setSalario] = useState("");
-  const [Tecnologias, setTecnologias] = useState([]);
-  const [Cidade, setCidade] = useState("");
-  const [TituloVaga, setTituloVaga] = useState("");
-  const [Candidatos, SetCandidato] = useState([]);
-  const [NomeArea, setNomeArea] = useState("");
-  const [TipoPresenca, setTipoPresenca] = useState("");
-  const [RazaoSocial, setRazaoSocial] = useState("");
-  const [CaminhoImagem, setCaminho] = useState("");
-
   let history = useHistory();
-  useEffect(() => {
-    BuscarPorId();
-    listarCandidatos();
-  }, []);
-
-  const BuscarPorId = () => {
-    fetch(
-      `${uri}/api/Usuario/BuscarPorId/` +
-        localStorage.getItem("idVagaSelecionadaEmpresa"),
-      {
-        method: "GET",
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((dados) => {
-        setTituloVaga(dados.tituloVaga);
-        setTipoContrato(dados.tipoContrato);
-        setSalario(
-          dados.salario.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })
-        );
-        setTecnologias(dados.tecnologias);
-        setCidade(dados.localidade);
-        setExperiencia(dados.experiencia);
-        setNomeArea(dados.nomeArea);
-        setTipoPresenca(dados.tipoPresenca);
-        setRazaoSocial(dados.razaoSocial);
-        setCaminho(dados.caminhoImagem);
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const listarCandidatos = () => {
-    fetch(
-      `${uri}/api/Empresa/ListarCandidatosInscritos/` +
-        localStorage.getItem("idVagaSelecionadaEmpresa"),
-      {
-        method: "GET",
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((dados) => {
-        SetCandidato(dados);
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const Aprovar = (id) => {
-    fetch(`${uri}/api/Empresa/Aprovar/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => response.json())
-      .then((dados) => {
-        alert(dados);
-        listarCandidatos();
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const Reprovar = (id) => {
-    fetch(`${uri}/api/Empresa/Reprovar/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => response.json())
-      .then((dados) => {
-        alert(dados);
-        listarCandidatos();
-      })
-      .catch((err) => console.error(err));
-  };
 
   return (
     <div className="bodyPartVizualizarVagaEmpresa">
@@ -133,31 +35,36 @@ export default function VizualizarVagaEmpresa() {
       <div className="vaga">
         <div className="VagaCompleta">
           <img
-            src={`${uri}/imgPerfil/${CaminhoImagem}`}
+            src={user}
             className="ImagemEmpresa"
             alt="Iamgem de perfil da empresa"
           />
           <div className="MainVaga">
-            <h3>{TituloVaga}</h3>
+            <h3>Desenvolvimento</h3>
             <div className="InfoVagas">
-              <InfoVaga NomeProp={RazaoSocial} source={IconEmpresa}></InfoVaga>
-              <InfoVaga NomeProp={Cidade} source={imgLocalizacao}></InfoVaga>
-              <InfoVaga NomeProp={Experiencia} source={imgFuncao}></InfoVaga>
               <InfoVaga
-                NomeProp={TipoContrato}
+                NomeProp={"SENAI Informática"}
+                source={IconEmpresa}
+              ></InfoVaga>
+              <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao}></InfoVaga>
+              <InfoVaga NomeProp={"Júnior"} source={imgFuncao}></InfoVaga>
+              <InfoVaga
+                NomeProp={"PJ"}
                 source={imgTipoContrato}
               ></InfoVaga>
-              <InfoVaga NomeProp={Salario} source={imgSalario}></InfoVaga>
-              <InfoVaga NomeProp={TipoPresenca} source={imgGlobal} />
+              <InfoVaga NomeProp={"R$4.000"} source={imgSalario}></InfoVaga>
+              <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
               <InfoVaga
-                NomeProp={NomeArea}
+                NomeProp={"Desenvolvimento"}
                 source={imgDesenvolvimento}
               ></InfoVaga>
             </div>
             <div className="TecnologiasVaga">
-              {Tecnologias.map((tec) => {
-                return <Tag key={tec} NomeTag={tec}></Tag>;
-              })}
+                <Tag NomeTag={"Entity framework"}></Tag>
+                <Tag NomeTag={"C#"}></Tag>
+                <Tag NomeTag={"C++"}></Tag>
+                <Tag NomeTag={"SQL"}></Tag>
+                <Tag NomeTag={"React"}></Tag>
             </div>
           </div>
         </div>
@@ -169,40 +76,36 @@ export default function VizualizarVagaEmpresa() {
         Candidatos aprovados para esta vaga
       </button>
       <div className="ListaDeInscicoes">
-        {Candidatos.map((item) => {
-          return (
-            <div key={item.idCandidato} className="Inscricao">
-              <div className="CabecaInscricao">
-                <img
-                  className="imgperfilInscricao"
-                  src={`${uri}/imgPerfil/${item.idCandidatoNavigation.idUsuarioNavigation.caminhoImagem}`}
-                  alt="Imagem de Perfil do candidato"
-                />
-                <h3>{item.idCandidatoNavigation.nomeCompleto}</h3>
-                <hr className="hr" />
-                <h5>{item.idCandidatoNavigation.idCursoNavigation.nomeCurso}</h5>
-              </div>
-              <div className="CorpoInscricao">
-                <Tag NomeTag={"E-mail:" + item.idCandidatoNavigation.idUsuarioNavigation.email}></Tag>
-                <Tag NomeTag={"Telefone:" + item.idCandidatoNavigation.telefone}></Tag>
-              </div>
-              <div className="AprovarRecusar">
-                <button
-                  className="Aprovar"
-                  onClick={() => Aprovar(item.idInscricao)}
-                >
-                  Aprovar
-                </button>
-                <button
-                  className="Recusar"
-                  onClick={() => Reprovar(item.idInscricao)}
-                >
-                  Reprovar
-                </button>
-              </div>
-            </div>
-          );
-        })}
+        <div  className="Inscricao">
+          <div className="CabecaInscricao">
+            <img
+              className="imgperfilInscricao"
+              src={user}
+              alt="Imagem de Perfil do candidato"
+            />
+            <h3>Candidato</h3>
+            <hr className="hr" />
+            <h5>Desenvolvimento de sistemas</h5>
+          </div>
+          <div className="CorpoInscricao">
+            <Tag NomeTag={"E-mail:Candidato@gmail.com"}></Tag>
+            <Tag NomeTag={"Telefone:40028922"}></Tag>
+          </div>
+          <div className="AprovarRecusar">
+            <button
+              className="Aprovar"
+              onClick={() => alert("Candidato aprovado com sucesso")}
+            >
+              Aprovar
+            </button>
+            <button
+              className="Recusar"
+              onClick={() => alert("Candidato reprovado com sucesso")}
+            >
+              Reprovar
+            </button>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

@@ -337,7 +337,7 @@ export default function TesteDePesonalidade() {
           value="C"
         />
         <InputRadius
-          label="Confiável, meticuloso e previsíve"
+          label="Confiável, meticuloso e previsível"
           name="q1"
           value="O"
         />
@@ -701,7 +701,7 @@ export default function TesteDePesonalidade() {
       </div>
 
       <div id="q25" className="Questionario">
-        <h3>Eu penso que</h3>
+        <h3>Eu penso que...</h3>
         <InputRadius
           label="Não é fácil ficar encurralado"
           name="q25"

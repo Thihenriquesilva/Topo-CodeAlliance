@@ -1,10 +1,10 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { Fragment,ButtonHTMLAttributes } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../services/token'
 import MenuMobile from '../imgsvg/menu';
 
 import xBurguer from '../../assets/x.webp';
-import logops from '../../assets/logops.webp';
+import logops from '../../assets/logoTranqs.png';
 import burguerMenu from '../../assets/menumobile.webp';
 
 import './style.css';
@@ -53,15 +53,17 @@ export default function Header() {
         return (
             <header>
                 <div className="header">
-                    <Link to="/" title="Logomarca da empresa TechVagas. Home SENAI TechVagas">
-                        <img src={logops} className="logo" alt="Logo marca do projecto SENAI TechVagas" />
+                    <Link to="/" title="Logomarca da empresa Code Alliance">
+                        <img src={logops} className="logo" alt="Logo marca do projecto TranquiloJobs" />
                     </Link>
                     <nav className="navbar">
-                        <ul>
-                            <li><Link to="/" id="menu">Home</Link></li>
-                            <li><Link to="/sobre">Sobre</Link></li>
-                            <li><Link className="botao" to="/login">Login</Link></li>
-                            <li><Link className="botao1" to="/cadastro">Cadastro</Link></li>
+                        <ul id="menu">
+                            <Fragment>
+                                <li><Link to="/" >Home</Link></li>
+                                <li><Link to="/sobre">Sobre</Link></li>
+                                <li><Link className="botao" to="/login">Login</Link></li>
+                                <li><Link className="botao1" to="/cadastro">Cadastro</Link></li>
+                            </Fragment>
                         </ul>
                     </nav>
                     <MenuMobile className="navmobile none burguer" id="burguer" alt="Menu mobile - Clique para abrir" onClick={event => {

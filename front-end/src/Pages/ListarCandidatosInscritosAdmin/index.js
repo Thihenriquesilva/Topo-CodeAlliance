@@ -1,132 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 import AccessBar from "../../Components/AccessBar";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
-import InfoVaga from "../../Components/InfoVaga/Index";
-import AccessMenu from "../../Components/AccessMenu";
 
 import imgDelete from "../../assets/delete.webp";
 import imgGlobal from "../../assets/global.png";
+import InfoVaga from "../../Components/InfoVaga/Index";
 import imgDesenvolvimento from "../../assets/web-programming.webp";
 import imgLocalizacao from "../../assets/big-map-placeholder-outlined-symbol-of-interface.webp";
 import imgSalario from "../../assets/money (1).webp";
 import imgTipoContrato from "../../assets/gears.webp";
 import imgFuncao from "../../assets/rocket-launch.webp";
 import IconEmpresa from "../../assets/building.webp";
+import AccessMenu from "../../Components/AccessMenu";
 
-import { uri } from "../../services/conexao";
+import user from '../../assets/images/user.webp'
 
 import "./style.css";
+import { useHistory } from "react-router-dom";
 
 export default function ListarCandidatosInscritos() {
-  const [Candidatos, setCandidatos] = useState([]);
-  const [Experiencia, setExperiencia] = useState("");
-  const [TipoContrato, setTipoContrato] = useState("");
-  const [Salario, setSalario] = useState("");
-  const [TipoPresenca, setPresenca] = useState("");
-  const [Area, setArea] = useState("");
-  const [razaoSocial, setRazaoSocial] = useState("");
-  const [Cidade, setCidade] = useState("");
-  const [TituloVaga, setTituloVaga] = useState("");
-  const [DescricaoBeneficio, setDescricaoBeneficio] = useState("");
-  const [DescricaoEmpresa, setDescricaoEmpresa] = useState("");
-  const [DescricaoVaga, setDescricaoVaga] = useState("");
-  const [caminhoImagem, setCaminho] = useState("");
-
   let History = useHistory();
-
-  useEffect(() => {
-    BuscarPorId();
-    listarCandidatos();
-  }, []);
-
-  const DeletarInscricao = (id) => {
-    fetch(`${uri}/api/Administrador/DeletarInscricao/${id}`, {
-      method: "DELETE",
-      headers: {
-        authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => response.json())
-      .then((dados) => {
-        alert(dados);
-        listarCandidatos();
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const BuscarPorId = () => {
-    fetch(
-      `${uri}/api/Usuario/BuscarPorId/` +
-        localStorage.getItem("idVagaSelecionadaAdm"),
-      {
-        method: "GET",
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((dados) => {
-        setTituloVaga(dados.tituloVaga);
-        setRazaoSocial(dados.razaoSocial);
-        setPresenca(dados.tipoPresenca);
-        setArea(dados.nomeArea);
-        setTipoContrato(dados.tipoContrato);
-        setSalario(
-          dados.salario.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })
-        );
-        setCidade(dados.localidade);
-        setExperiencia(dados.experiencia);
-        setDescricaoBeneficio(dados.descricaoBeneficio);
-        setDescricaoEmpresa(dados.descricaoEmpresa);
-        setDescricaoVaga(dados.descricaoVaga);
-        setCaminho(dados.caminhoImagem);
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const listarCandidatos = () => {
-    fetch(
-      `${uri}/api/Administrador/ListarCandidatosInscritosAdm/` +
-        localStorage.getItem("idVagaSelecionadaAdm"),
-      {
-        method: "GET",
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((dados) => {
-        setCandidatos(dados);
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const DeletarVaga = () => {
-    fetch(
-      `${uri}/api/Administrador/DeletarVaga/` +
-        localStorage.getItem("idVagaSelecionadaAdm"),
-      {
-        method: "DELETE",
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((dados) => {
-        alert(dados);
-        History.push("/perfil");
-      })
-      .catch((err) => console.error(err));
-  };
 
   return (
     <div className="bodyPartInscricoesAdm">
@@ -135,57 +30,144 @@ export default function ListarCandidatosInscritos() {
       <AccessMenu />
       <div className="Meio-Inscricoes">
         <div className="Esquerdo-Inscricoes">
-          {Candidatos.map((item) => {
-            return (
-              <div key={item.idInscricao} className="BoxInscricao">
-                <div className="Edit-Delete">
-                  <img
-                    className="Delete"
-                    src={imgDelete}
-                    onClick={() => DeletarInscricao(item.idInscricao)}
-                    alt="Botão que deleta a inscrição do usuario"
-                  />
-                </div>
-                <div className="DadosInscrito">
-                  <img
-                    className="imgUsuario"
-                    src={`${uri}/imgPerfil/${item.idCandidatoNavigation.idUsuarioNavigation.caminhoImagem}`}
-                    alt="Imagem de perfil do usuario inscrito"
-                  />
-                  <div className="Column-Inscricao">
-                    <h3>{item.idCandidatoNavigation.nomeCompleto}</h3>
-                    <p className="NomeCurso">{item.idCandidatoNavigation.idCursoNavigation.nomeCurso}</p>
-                  </div>
-                </div>
+          <div className="BoxInscricao">
+            <div className="Edit-Delete">
+              <img
+                className="Delete"
+                src={imgDelete}
+                onClick={() => alert("Inscrição deletada com sucesso")}
+                alt="Botão que deleta a inscrição do usuario"
+              />
+            </div>
+            <div className="DadosInscrito">
+              <img
+                className="imgUsuario"
+                src={user}
+                alt="Imagem de perfil do usuario inscrito"
+              />
+              <div className="Column-Inscricao">
+                <h3>Aléxia Melhado</h3>
+                <p className="NomeCurso">Desenvolvimento de sistemas</p>
               </div>
-            );
-          })}
+            </div>
+          </div>
+
+          <div className="BoxInscricao">
+            <div className="Edit-Delete">
+              <img
+                className="Delete"
+                src={imgDelete}
+                onClick={() => alert("Inscrição deletada com sucesso")}
+                alt="Botão que deleta a inscrição do usuario"
+              />
+            </div>
+            <div className="DadosInscrito">
+              <img
+                className="imgUsuario"
+                src={user}
+                alt="Imagem de perfil do usuario inscrito"
+              />
+              <div className="Column-Inscricao">
+                <h3>André Akira</h3>
+                <p className="NomeCurso">Desenvolvimento de sistemas</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="BoxInscricao">
+            <div className="Edit-Delete">
+              <img
+                className="Delete"
+                src={imgDelete}
+                onClick={() => alert("Inscrição deletada com sucesso")}
+                alt="Botão que deleta a inscrição do usuario"
+              />
+            </div>
+            <div className="DadosInscrito">
+              <img
+                className="imgUsuario"
+                src={user}
+                alt="Imagem de perfil do usuario inscrito"
+              />
+              <div className="Column-Inscricao">
+                <h3>Carlos Eduardo</h3>
+                <p className="NomeCurso">Desenvolvimento de sistemas</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="BoxInscricao">
+            <div className="Edit-Delete">
+              <img
+                className="Delete"
+                src={imgDelete}
+                onClick={() => alert("Inscrição deletada com sucesso")}
+                alt="Botão que deleta a inscrição do usuario"
+              />
+            </div>
+            <div className="DadosInscrito">
+              <img
+                className="imgUsuario"
+                src={user}
+                alt="Imagem de perfil do usuario inscrito"
+              />
+              <div className="Column-Inscricao">
+                <h3>Douglas Mantovani</h3>
+                <p className="NomeCurso">Desenvolvimento de sistemas</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="BoxInscricao">
+            <div className="Edit-Delete">
+              <img
+                className="Delete"
+                src={imgDelete}
+                onClick={() => alert("Inscrição deletada com sucesso")}
+                alt="Botão que deleta a inscrição do usuario"
+              />
+            </div>
+            <div className="DadosInscrito">
+              <img
+                className="imgUsuario"
+                src={user}
+                alt="Imagem de perfil do usuario inscrito"
+              />
+              <div className="Column-Inscricao">
+                <h3>Marcos Tomás</h3>
+                <p className="NomeCurso">Desenvolvimento de sistemas</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="Direito-Inscricoes">
           <div className="VagaDescricao">
             <div className="vaga">
-              <h5 className="ExcluirVagaText" onClick={DeletarVaga}>
+              <h5
+                className="ExcluirVagaText"
+                onClick={() => alert("Vaga deletada com sucesso")}
+              >
                 Excluir vaga
               </h5>
               <div className="VagaCompleta">
                 <img
-                  src={`${uri}/imgPerfil/${caminhoImagem}`}
+                  src={user}
                   className="ImagemEmpresa"
                   alt="Imagem de perfil da empresa"
                 />
                 <div className="MainVaga">
-                  <h3>{TituloVaga}</h3>
+                  <h3>Desenvolvedor Full stack</h3>
                   <div className="InfoVagas">
-                    <InfoVaga NomeProp={razaoSocial} source={IconEmpresa} />
-                    <InfoVaga NomeProp={Cidade} source={imgLocalizacao} />
-                    <InfoVaga NomeProp={Experiencia} source={imgFuncao} />
+                    <InfoVaga NomeProp={"SENAI Informática"} source={IconEmpresa} />
+                    <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
+                    <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
                     <InfoVaga
-                      NomeProp={TipoContrato}
+                      NomeProp={"CLT"}
                       source={imgTipoContrato}
                     />
-                    <InfoVaga NomeProp={Salario} source={imgSalario} />
-                    <InfoVaga NomeProp={Area} source={imgDesenvolvimento} />
-                    <InfoVaga NomeProp={TipoPresenca} source={imgGlobal} />
+                    <InfoVaga NomeProp={"4.000"} source={imgSalario} />
+                    <InfoVaga NomeProp={"Desenvolvimento"} source={imgDesenvolvimento} />
+                    <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
                   </div>
                 </div>
               </div>
@@ -193,17 +175,17 @@ export default function ListarCandidatosInscritos() {
             <div className="Descricoes">
               <div className="DescricaoEmpresa">
                 <h3>Descricao da empresa</h3>
-                <p>{DescricaoEmpresa}</p>
+                <p>
+                  A melhor empresa do mercado, quem fez parte recomenda !!!
+                </p>
               </div>
-
               <div className="DescricaoVaga">
                 <h3>Descricao da vaga</h3>
-                <p>{DescricaoVaga}</p>
+                <p>A melhor vaga que você encontrará nos proximos meses</p>
               </div>
-
               <div className="DescricaoBeneficios">
                 <h3>Descricao beneficios</h3>
-                <p>{DescricaoBeneficio}</p>
+                <p>Vale transporte</p>
               </div>
             </div>
           </div>
