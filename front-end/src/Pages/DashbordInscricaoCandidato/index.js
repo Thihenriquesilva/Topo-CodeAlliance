@@ -26,28 +26,18 @@ export default function InscricaoDashboardCandidato() {
       <AccessBar />
       <Header />
       <AccessMenu />
-      <main className="">
         <div className="bannerDashboardCandidato">
           <h2>Bem-vindo, Candidato ;)!</h2>
         </div>
-
-        <section className="sessaoVagaInscritas">
           <div className="title-vagas-inscritas">
             <h3>Vagas que você se inscreveu:</h3>
           </div>
 
-          <div className="listadeVagas">
-            <div
-              className="vaga"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-            >
+          <div className="vagas">
+            <div className="vaga">
               <div className="VagaCompleta">
                 <img
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NAVoV-pbGXsmDghOSFajt5UU1VhqgVvB4w&usqp=CAU"
-                  }
+                  src={"https://media.discordapp.net/attachments/797237767004356619/800216933223890973/Topo-removebg-preview.png"}
                   className="ImagemEmpresa"
                   alt="Imagem de perfil"
                 ></img>
@@ -57,50 +47,7 @@ export default function InscricaoDashboardCandidato() {
                   </h3>
                   <div className="InfoVagas">
                     <InfoVaga
-                      NomeProp={"SENAI Informática"}
-                      source={IconEmpresa}
-                    />
-                    <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
-                    <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
-                    <InfoVaga NomeProp={"CLT"} source={imgTipoContrato} />
-                    <InfoVaga NomeProp={"5.000"} source={imgSalario} />
-                    <InfoVaga
-                      NomeProp={"Desenvolvimento"}
-                      source={imgDesenvolvimento}
-                    />
-                    <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
-                  </div>
-                  <div className="TecnologiasVaga">
-                    <Tag NomeTag={"C#"}></Tag>
-                    <Tag NomeTag={"C++"}></Tag>
-                    <Tag NomeTag={"Entity framework"}></Tag>
-                    <Tag NomeTag={"React"}></Tag>
-                    <Tag NomeTag={"Flutther"}></Tag>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="vaga"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-            >
-              <div className="VagaCompleta">
-                <img
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NAVoV-pbGXsmDghOSFajt5UU1VhqgVvB4w&usqp=CAU"
-                  }
-                  className="ImagemEmpresa"
-                  alt="Imagem de perfil"
-                ></img>
-                <div className="MainVaga">
-                  <h3>
-                    {"Desenvolvedor Full stack"}
-                  </h3>
-                  <div className="InfoVagas">
-                    <InfoVaga
-                      NomeProp={"SENAI Informática"}
+                      NomeProp={"Code Alliance"}
                       source={IconEmpresa}
                     />
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
@@ -126,15 +73,10 @@ export default function InscricaoDashboardCandidato() {
 
             <div
               className="vaga"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
             >
               <div className="VagaCompleta">
                 <img
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NAVoV-pbGXsmDghOSFajt5UU1VhqgVvB4w&usqp=CAU"
-                  }
+                  src={"https://media.discordapp.net/attachments/797237767004356619/800216933223890973/Topo-removebg-preview.png"}
                   className="ImagemEmpresa"
                   alt="Imagem de perfil"
                 ></img>
@@ -144,7 +86,7 @@ export default function InscricaoDashboardCandidato() {
                   </h3>
                   <div className="InfoVagas">
                     <InfoVaga
-                      NomeProp={"SENAI Informática"}
+                      NomeProp={"Code Alliance"}
                       source={IconEmpresa}
                     />
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
@@ -169,26 +111,62 @@ export default function InscricaoDashboardCandidato() {
             </div>
 
             <div
-              className="vaga"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-            >
+              className="vaga">
               <div className="VagaCompleta">
                 <img
                   src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NAVoV-pbGXsmDghOSFajt5UU1VhqgVvB4w&usqp=CAU"
+                    "https://media.discordapp.net/attachments/797237767004356619/800216933223890973/Topo-removebg-preview.png"
                   }
                   className="ImagemEmpresa"
                   alt="Imagem de perfil"
                 ></img>
                 <div className="MainVaga">
-                  <h3 >
+                  <h3>
                     {"Desenvolvedor Full stack"}
                   </h3>
                   <div className="InfoVagas">
                     <InfoVaga
-                      NomeProp={"SENAI Informática"}
+                      NomeProp={"Code Alliance"}
+                      source={IconEmpresa}
+                    />
+                    <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
+                    <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
+                    <InfoVaga NomeProp={"CLT"} source={imgTipoContrato} />
+                    <InfoVaga NomeProp={"5.000"} source={imgSalario} />
+                    <InfoVaga
+                      NomeProp={"Desenvolvimento"}
+                      source={imgDesenvolvimento}
+                    />
+                    <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
+                  </div>
+                  <div className="TecnologiasVaga">
+                    <Tag NomeTag={"C#"}></Tag>
+                    <Tag NomeTag={"C++"}></Tag>
+                    <Tag NomeTag={"Entity framework"}></Tag>
+                    <Tag NomeTag={"React"}></Tag>
+                    <Tag NomeTag={"Flutther"}></Tag>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="vaga">
+              <div className="VagaCompleta">
+                <img
+                  src={
+                    "https://media.discordapp.net/attachments/797237767004356619/800216933223890973/Topo-removebg-preview.png"
+                  }
+                  className="ImagemEmpresa"
+                  alt="Imagem de perfil"
+                ></img>
+                <div className="MainVaga">
+                  <h3>
+                    {"Desenvolvedor Full stack"}
+                  </h3>
+                  <div className="InfoVagas">
+                    <InfoVaga
+                      NomeProp={"Code Alliance"}
                       source={IconEmpresa}
                     />
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
@@ -212,8 +190,6 @@ export default function InscricaoDashboardCandidato() {
               </div>
             </div>
           </div>
-        </section>
-      </main>
       <Footer />
     </div>
   );

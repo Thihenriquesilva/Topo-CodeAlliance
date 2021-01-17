@@ -188,7 +188,7 @@ Este teste relaciona às características de um animal ao comportamento humano, 
           <div className="BoxDepoimentos">
             <div className="BoxTexto">
               <div className="Depo">
-                <p>"Um dos grandes diferenciais do Senai é  proporcionar o Ensino Fundamentado efetivo, onde alunos e professores vivenciam o cotidiano do mercado de trabalho com experiências em projetos reais. Fornece uma estrutura e administração  inovadora possibilitando o desenvolvimento técnico e humano de nossos alunos."</p>
+                <p>"Um dos grandes diferenciais do Code Enterprise é  proporcionar o Ensino Fundamentado efetivo, onde alunos e professores vivenciam o cotidiano do mercado de trabalho com experiências em projetos reais. Fornece uma estrutura e administração  inovadora possibilitando o desenvolvimento técnico e humano de nossos alunos."</p>
               </div>
               <br/>
               <h5 className="NomeDepo">Priscila Medeiro - Orientadora do Projeto</h5>

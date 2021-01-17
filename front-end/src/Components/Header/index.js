@@ -108,13 +108,11 @@ export default function Header() {
         return (
             <header>
                 <div className="header">
-                    <img src={logops} className="logo" alt="Logomarca da empresa TechVagas. Home SENAI TechVagas" />
+                    <img src={logops} className="logo" alt="Logomarca da empresa TranqiuiloJobs. Home TranquiloJobs" />
                     <nav className="navbar">
                         <ul id="menu">
                             <li><Link to="/perfil">Perfil</Link></li>
                             <li><Link to="/colaboradores">Colaboradores</Link></li>
-                            <li><Link to="/cadastro/Estagio">Cadastrar estágio</Link></li>
-                            <li><Link to="/Estagio">Estágio</Link></li>
                             <li><Link to="/banidos">Banidos</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
@@ -135,8 +133,6 @@ export default function Header() {
                         <ul id="menu-hide" className="none">
                             <li><Link to="/perfil">Perfil</Link></li>
                             <li><Link to="/colaboradores">Colaboradores</Link></li>
-                            <li><Link to="/cadastro/Estagio">Cadastrar estágio</Link></li>
-                            <li><Link to="/Estagio">Estágio</Link></li>
                             <li><Link to="/banidos">Banidos</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
@@ -149,8 +145,6 @@ export default function Header() {
                         <ul id="menu-hide" className="none">
                             <li><Link to="/perfil">Perfil</Link></li>
                             <li><Link to="/colaboradores">Colaboradores</Link></li>
-                            <li><Link to="/cadastro/Estagio">Cadastrar estágio</Link></li>
-                            <li><Link to="/Estagio">Estágio</Link></li>
                             <li><Link to="/banidos">Banidos</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
@@ -162,13 +156,12 @@ export default function Header() {
         return (
             <header>
                 <div className="header">
-                    <img src={logops} className="logo" alt="Logomarca da empresa TechVagas. Home SENAI TechVagas" />
+                    <img src={logops} className="logo" alt="Logomarca da empresa CodeAlliance. Home TranquiloJobss" />
                     <nav className="navbar">
                         <ul id="menu">
                             <li><Link to="/perfilCandidato">Perfil</Link></li>
                             <li><Link to="/principal">Principal</Link></li>
                             <li><Link to="/DashboardInscricaoCandidato">Ver inscrições</Link></li>
-                            <li><Link to="/sobre">Sobre</Link></li>
                             <li><Link to="/TesteDePersonalidade">Teste de personalidade</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
@@ -190,7 +183,6 @@ export default function Header() {
                             <li><Link to="/perfilCandidato">Perfil</Link></li>
                             <li><Link to="/principal">Principal</Link></li>
                             <li><Link to="/DashboardInscricaoCandidato">Ver inscrições</Link></li>
-                            <li><Link to="/sobre">Sobre</Link></li>
                             <li><Link to="/TesteDePersonalidade">Teste de personalidade</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
@@ -204,7 +196,6 @@ export default function Header() {
                             <li><Link to="/perfilCandidato">Perfil</Link></li>
                             <li><Link to="/principal">Principal</Link></li>
                             <li><Link to="/DashboardInscricaoCandidato">Ver inscrições</Link></li>
-                            <li><Link to="/sobre">Sobre</Link></li>
                             <li><Link to="/TesteDePersonalidade">Teste de personalidade</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
@@ -218,13 +209,12 @@ export default function Header() {
         return (
             <header>
                 <div className="header">
-                    <img src={logops} className="logo" alt="Logomarca da empresa TechVagas. Home SENAI TechVagas" />
+                    <img src={logops} className="logo" alt="Logomarca da empresa CodeAlliance. Home TranquiloJobs" />
                     <nav className="navbar">
                         <ul id="menu">
                             <li><Link to="/perfilEmpresa">Perfil</Link></li>
                             <li><Link to="/VagasPublicadas">Minhas vagas</Link></li>
                             <li><Link to="/cadastro/vaga">Divulgar vaga</Link></li>
-                            <li><Link to="/sobre">Sobre</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
                     </nav>
@@ -258,7 +248,6 @@ export default function Header() {
                             <li><Link to="/perfilEmpresa">Perfil</Link></li>
                             <li><Link to="/VagasPublicadas">Minhas vagas</Link></li>
                             <li><Link to="/cadastro/vaga">Divulgar vaga</Link></li>
-                            <li><Link to="/sobre">Sobre</Link></li>
                             <li><Link className="botao1" onClick={logout}>Sair</Link></li>
                         </ul>
                     </nav>

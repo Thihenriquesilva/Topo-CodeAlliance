@@ -61,7 +61,7 @@ export default function PerfilEmpresa() {
           <div className="imgPefilTexto">
           <input type="file" id="inputImage" className="none"/>
           <label htmlFor="inputImage"><img className="imgperfil" src={user} alt="perfil" /></label>
-            <h3>SENAI Informática</h3>
+            <h3>Code Enterprise</h3>
             <p>Empresa</p>
           </div>
           <div className="BotoesPerfilEmpresa">

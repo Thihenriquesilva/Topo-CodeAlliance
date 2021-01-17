@@ -6,7 +6,6 @@ import AccessMenu from "../../Components/AccessMenu";
 import Footer from "../../Components/Footer";
 import Lock from "../../Components/imgsvg/lock";
 
-import Techvagas from "../../assets/logops.webp";
 import { parseJwt } from "../../services/token";
 
 import "./style.css";
@@ -49,11 +48,6 @@ const Unauthorized = () => {
       <AccessMenu />
       <div className="not-found">
         <div className="not-found-text">
-          <img
-            src={Techvagas}
-            className="not-found-text-img"
-            alt="Logo TechVagas"
-          />
           <h3>
             <strong>Erro 401</strong>
           </h3>

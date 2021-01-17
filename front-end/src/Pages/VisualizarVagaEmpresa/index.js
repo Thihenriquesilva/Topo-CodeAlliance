@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import { useHistory } from "react-router-dom";
 
 import Header from "../../Components/Header";
@@ -43,7 +43,7 @@ export default function VizualizarVagaEmpresa() {
             <h3>Desenvolvimento</h3>
             <div className="InfoVagas">
               <InfoVaga
-                NomeProp={"SENAI Informática"}
+                NomeProp={"Code Enterprise"}
                 source={IconEmpresa}
               ></InfoVaga>
               <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao}></InfoVaga>

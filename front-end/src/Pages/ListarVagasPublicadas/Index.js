@@ -126,7 +126,7 @@ export default function VagasPublicadas() {
                 {"Desenvolvedor Full Stack"}
               </h3>
               <div className="InfoVagas">
-                <InfoVaga NomeProp={"SENAI Informática"} source={IconEmpresa} />
+                <InfoVaga NomeProp={"Code Enterprise"} source={IconEmpresa} />
                 <InfoVaga
                   NomeProp={"São Paulo"}
                   source={imgLocalizacao}
@@ -212,7 +212,7 @@ export default function VagasPublicadas() {
                 {"Desenvolvedor Full Stack"}
               </h3>
               <div className="InfoVagas">
-                <InfoVaga NomeProp={"SENAI Informática"} source={IconEmpresa} />
+                <InfoVaga NomeProp={"Code Enterprise"} source={IconEmpresa} />
                 <InfoVaga
                   NomeProp={"São Paulo"}
                   source={imgLocalizacao}
@@ -298,7 +298,7 @@ export default function VagasPublicadas() {
                 {"Desenvolvedor Full Stack"}
               </h3>
               <div className="InfoVagas">
-                <InfoVaga NomeProp={"SENAI Informática"} source={IconEmpresa} />
+                <InfoVaga NomeProp={"Code Enterprise"} source={IconEmpresa} />
                 <InfoVaga
                   NomeProp={"São Paulo"}
                   source={imgLocalizacao}
@@ -384,7 +384,7 @@ export default function VagasPublicadas() {
                 {"Desenvolvedor Full Stack"}
               </h3>
               <div className="InfoVagas">
-                <InfoVaga NomeProp={"SENAI Informática"} source={IconEmpresa} />
+                <InfoVaga NomeProp={"Code Enterprise"} source={IconEmpresa} />
                 <InfoVaga
                   NomeProp={"São Paulo"}
                   source={imgLocalizacao}

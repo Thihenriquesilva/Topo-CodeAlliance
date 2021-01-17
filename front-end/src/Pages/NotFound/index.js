@@ -6,7 +6,7 @@ import AccessMenu from "../../Components/AccessMenu";
 import Footer from "../../Components/Footer";
 import Robot from "../../Components/imgsvg/robot.js";
 
-import Techvagas from "../../assets/logops.webp";
+
 
 import { parseJwt } from "../../services/token";
 
@@ -50,11 +50,7 @@ const NotFound = () => {
       <AccessMenu />
       <div className="not-found">
         <div className="not-found-text">
-          <img
-            src={Techvagas}
-            className="not-found-text-img"
-            alt="Logo TechVagas"
-          />
+          
           <h3>
             <strong>Erro 404</strong>
           </h3>

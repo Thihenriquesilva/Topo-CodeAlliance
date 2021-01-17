@@ -27,8 +27,8 @@ export default function CadastrarColaborador() {
     const data = {
       Email: Email,
       Senha: Senha,
-      perguntaSeguranca: "Em que ano o senai foi fundado",
-      respostaSeguranca: "1942",
+      perguntaSeguranca: "Em que ano foi fundado a Microsoft",
+      respostaSeguranca: "No ano de fundação",
     };
 
     if (Senha !== ConfirmarSenha || Senha === "" || ConfirmarSenha === "") {

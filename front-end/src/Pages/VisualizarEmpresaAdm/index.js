@@ -66,10 +66,10 @@ let history=useHistory();
                   <h5></h5>
                 </div>
                 <div className="DadosDaEmpresa">
-                  <Tag NomeTag={"Nome do responsável:Roberto Possarle"}/>
+                  <Tag NomeTag={"Nome do responsável:Luizito soares"}/>
                   <Tag NomeTag={"CNPJ:243234234234"}/>
-                  <Tag NomeTag={"Email para contato:Senai@gmail.com"}/>
-                  <Tag NomeTag={"Nome fantasia:SENAI Informática"}/>
+                  <Tag NomeTag={"Email para contato:CodeEnterprise@gmail.com"}/>
+                  <Tag NomeTag={"Nome fantasia:Code Enterprise"}/>
                   <Tag NomeTag={"Telefone:2432432342"}/>
                   <Tag NomeTag={"Numero de fúncionarios atuando:34"}/>
                   <Tag NomeTag={"Número do CNAE:234234234"}/>

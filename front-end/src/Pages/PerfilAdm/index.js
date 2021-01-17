@@ -306,8 +306,8 @@ export default function PerfilAdm() {
                 alt="Iamgem de perfil do usuario"
               />
               <div className="ColumnNomeEmail">
-                <h2>SENAI Informática</h2>
-                <p>Senai@gmail.com</p>
+                <h2>Code Enterprise</h2>
+                <p>CodeEnterprise@gmail.com</p>
               </div>
             </div>
             <div className="ColumnPerfilBanir">

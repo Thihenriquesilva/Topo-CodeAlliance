@@ -12,7 +12,7 @@ export default function Footer(){
          <div>
            <p className="text-end">Hackathon on-line - Shawee</p>
            <p className="text-end">R. Dr.Alfredo de Castro,200 - Barra Funda - São Paulo-SP, 01155-060</p>
-           <p className="text-end">Telefone: (11) 3273-5000 |E-mail:informatica@sp.senai.br</p>
+           <p className="text-end">Telefone: (11) 3273-5000 |E-mail:Osbrabos@gmail.com</p>
          </div>
        </footer>
     );

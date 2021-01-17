@@ -46,28 +46,51 @@ export default function VisualizarVaga() {
         </section>
 
         <section className="infoVagaVisualizar">
-          <div className="icard-division">
+        <div className="vaga">
+          <div className="VagaCompleta">
             <img
-              className="ImagemEmpresa"
               src={user}
-              alt="Logo da empresa"
+              className="ImagemEmpresa"
+              alt="Imagem de perfil da empresa"
             />
-
-            <div className="divisionTagsVagas">
-              <div className="card-vaga-info">
-                <InfoVaga NomeProp={"RazaoSocial"} source={IconEmpresa} />
-                <InfoVaga NomeProp={"Cidade"} source={imgLocalizacao} />
-                <InfoVaga NomeProp={"Experiencia"} source={imgFuncao} />
+            <div className="MainVaga">
+              <h3
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push("/VagaEmpresa");
+                }}
+                className="UnderlineText"
+              >
+                {"Desenvolvedor Full Stack"}
+              </h3>
+              <div className="InfoVagas">
+                <InfoVaga NomeProp={"Code Enterprise"} source={IconEmpresa} />
+                <InfoVaga
+                  NomeProp={"São Paulo"}
+                  source={imgLocalizacao}
+                />
+                <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
+                <InfoVaga
+                  NomeProp={"CLT"}
+                  source={imgTipoContrato}
+                />
+                <InfoVaga NomeProp={"R$4.000"} source={imgSalario} />
+                <InfoVaga
+                  NomeProp={"Desenvolvimento"}
+                  source={imgDesenvolvimento}
+                />
+                <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
               </div>
-
-              <div className="card-vaga-info">
-                <InfoVaga NomeProp={"TipoContrato"} source={imgTipoContrato} />
-                <InfoVaga NomeProp={"Salario"} source={imgSalario} />
-                <InfoVaga NomeProp={"Area"} source={imgDesenvolvimento} />
-                <InfoVaga NomeProp={"tipoPresenca"} source={imgGlobal} />
+              <div className="TecnologiasVaga">
+                <Tag NomeTag={"Entity framework"}></Tag>
+                <Tag NomeTag={"C#"}></Tag>
+                <Tag NomeTag={"C++"}></Tag>
+                <Tag NomeTag={"SQL"}></Tag>
+                <Tag NomeTag={"React"}></Tag>
               </div>
             </div>
           </div>
+        </div>
         </section>
 
         <section className="sessao-svempresa">

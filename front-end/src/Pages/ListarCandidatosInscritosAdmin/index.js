@@ -158,7 +158,7 @@ export default function ListarCandidatosInscritos() {
                 <div className="MainVaga">
                   <h3>Desenvolvedor Full stack</h3>
                   <div className="InfoVagas">
-                    <InfoVaga NomeProp={"SENAI Informática"} source={IconEmpresa} />
+                    <InfoVaga NomeProp={"Code Enterprise"} source={IconEmpresa} />
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
                     <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
                     <InfoVaga

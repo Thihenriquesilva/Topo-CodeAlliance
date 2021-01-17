@@ -92,7 +92,7 @@ const login = () =>
 
                         <div className="division-logar-title">
                             <h2>login</h2>
-                            <p className="sub-titulo">Bem-vindo ao SENAI | TechVagas</p>
+                            <p className="sub-titulo">Bem-vindo ao TranquiloJobs | CodeAlliance</p>
                         </div>
 
                         <form className="form-logar" onSubmit={event => {

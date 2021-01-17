@@ -78,7 +78,7 @@ export default function PerfilCandidato() {
           <div className="BoxPerfilCandidato">
             <div className="flexBoxPerfilCandidato">
               <img src={user} alt="Imagem de pefil da empresa dona da vaga" />
-              <h3>{"Nome da empresa:SENAI Informática"}</h3>
+              <h3>{"Nome da empresa:Code Enterprise"}</h3>
             </div>
             <h3>{"Tipo do contrato:CLT"}</h3>
             <h3>{"Salario:" + "R$4.000"}</h3>
@@ -87,7 +87,7 @@ export default function PerfilCandidato() {
           <div className="BoxPerfilCandidato">
             <div className="flexBoxPerfilCandidato">
               <img src={user} alt="Imagem de pefil da empresa dona da vaga" />
-              <h3>{"Nome da empresa:SENAI Informática"}</h3>
+              <h3>{"Nome da empresa:Code Enterprise"}</h3>
             </div>
             <h3>{"Tipo do contrato:CLT"}</h3>
             <h3>{"Salario:" + "R$4.000"}</h3>
@@ -96,7 +96,7 @@ export default function PerfilCandidato() {
           <div className="BoxPerfilCandidato">
             <div className="flexBoxPerfilCandidato">
               <img src={user} alt="Imagem de pefil da empresa dona da vaga" />
-              <h3>{"Nome da empresa:SENAI Informática"}</h3>
+              <h3>{"Nome da empresa:Code Enterprise"}</h3>
             </div>
             <h3>{"Tipo do contrato:CLT"}</h3>
             <h3>{"Salario:" + "R$4.000"}</h3>

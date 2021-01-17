@@ -16,7 +16,7 @@ export default function AccessBar() {
                 </div>
 
                 <div className="flex">
-                    <p className="links"><a href="https://www.instagram.com/senai_info/" aria-label="Instagram do SENAI Informática" className="topbar fa fa-instagram topicon" target="_black"></a></p>
+                    <p className="links"><a href="" aria-label="Instagram do TranquiloJobs Informática" className="topbar fa fa-instagram topicon" target="_black"></a></p>
                 </div>
             </div>
         </section>
