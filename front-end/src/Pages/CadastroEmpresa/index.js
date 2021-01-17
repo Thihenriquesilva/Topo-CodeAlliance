@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 
 import AccessBar from "../../Components/AccessBar";
 import Header from "../../Components/Header";
@@ -11,183 +10,10 @@ import Footer from "../../Components/Footer";
 import imagemCadastroEmpresa from "../../assets/imgCadastroEmpresa.webp";
 import Userimg from "../../assets/Teste.webp";
 
-import { uri } from "../../services/conexao";
 
 import "./style.css";
 
 export default function CadastroEmpresa() {
-  const [NomeResponsavel, SetNomeResponsavel] = useState("");
-  const [CNPJ, SetCNPJ] = useState("");
-  const [Email, SetEmail] = useState("");
-  const [NomeFantasia, SetNomeFantasia] = useState("");
-  const [RazaoSocial, SetRazaoSocial] = useState("");
-  const [Telefone, SetTelefone] = useState("");
-  const [NumFuncionario, SetNumFuncionario] = useState("");
-  const [NumCNAE, SetNumCNAE] = useState("");
-  let   [CEP, SetCEP] = useState("");
-  let   [Logradouro, SetLogradouro] = useState("");
-  const [Complemento, SetComplemento] = useState("");
-  const [EmailContato, SetEmailContato] = useState("");
-  const [PerguntaSeguranca, SetPergunta] = useState("");
-  const [RespostaSeguranca, SetResposta] = useState("");
-  let   [Estado, SetEstado] = useState("");
-  let   [Cidade, SetCidade] = useState("");
-  const [Senha, SetSenha] = useState("");
-  const [ConfirmarSenha, SetConfirmarSenha] = useState("");
-  const [CaminhoImagem, setCaminho] = useState("");
-
-  const history = useHistory();
-
-  const emailRegex = /^\S+@\S+\.\S+$/g;
-  const validaCep = /^[0-9]{8}$/g;
-  const senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%&\*_-])(?=.{9,15})/g;
-
-  const verificacaoCep = validaCep.test(CEP);
-  const verificacaoEmail = emailRegex.test(Email);
-  const verificacaoSenha = senhaRegex.test(Senha);
-
-  let redBox = document.querySelector("#confirmPassword-cadastro");
-  let result = document.querySelector(".password-matching-text");
-  let instructions = document.querySelector(".password-instructions-text");
-
-  function buscarCep(valor) {
-    if (verificacaoCep) {
-      const URL = `https://viacep.com.br/ws/${valor}/json/`;
-      fetch(URL)
-        .then((resposta) => resposta.json())
-        .then((data) => {
-          if (data.logradouro || data.localidade || data.uf !== undefined) {
-            document.getElementById("rua").value = data.logradouro;
-            document.getElementById("cidade").value = data.localidade;
-            document.getElementById("uf").value = data.uf;
-            SetLogradouro(data.logradouro);
-            SetCidade(data.localidade);
-            SetEstado(data.uf);
-          } else {
-            alert("O CEP não existe");
-          }
-        })
-        .catch((erro) => console.error(erro));
-    } else {
-      alert("O CEP deve conter apenas 8 números");
-    }
-  }
-
-  const escreverResultado = () => {
-    if (Senha !== ConfirmarSenha) {
-      redBox.style.border = "solid red 1px";
-      redBox.style.boxShadow = "3px 3px 3px gray";
-      result.style.color = "red";
-      result.innerText = "As senhas não conferem";
-    } else {
-      redBox.style.border = "unset";
-      redBox.style.boxShadow = "unset";
-      result.style.color = "unset";
-      result.innerText = "As senhas conferem";
-    }
-
-    if (verificacaoSenha !== true) {
-      redBox.style.border = "solid red 1px";
-      redBox.style.boxShadow = "3px 3px 3px gray";
-      instructions.style.color = "red";
-      instructions.innerText = `A senha deve conter, no mínimo, 9 caracteres, e no máximo 15, dentre eles:
-      • 1 letra minúscula
-      • 1 letra maiúscula
-      • 1 número
-      • 1 caractere especial`;
-    } else {
-      redBox.style.border = "unset";
-      redBox.style.boxShadow = "unset";
-      instructions.style.color = "unset";
-      instructions.innerText = "";
-    }
-  };
-
-  function salvar(e) {
-    e.preventDefault();
-    if (Senha !== ConfirmarSenha) {
-      alert("As senhas são difererentes");
-    } else if (verificacaoEmail !== true) {
-      alert("O e-mail deve ser válido");
-    } else if (verificacaoSenha !== true) {
-      alert("A(s) senha(s) não confere(m) com o padrão solicitado");
-    } else {
-      const data = {
-        NomeReponsavel: NomeResponsavel,
-        Cnpj: CNPJ,
-        EmailContato: EmailContato,
-        NomeFantasia: NomeFantasia,
-        RazaoSocial: RazaoSocial,
-        Telefone: Telefone,
-        NumFuncionario: NumFuncionario,
-        NumCnae: NumCNAE,
-        Cep: CEP,
-        Logradouro: Logradouro,
-        Complemento: Complemento,
-        Estado: Estado,
-        Localidade: Cidade,
-        Email: Email,
-        Senha: Senha,
-        RespostaSeguranca: RespostaSeguranca,
-        PerguntaSeguranca: PerguntaSeguranca,
-        CaminhoImagem: CaminhoImagem,
-      };
-      fetch(`${uri}/api/Usuario/Empresa`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "content-type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (response.status == 200) {
-            alert("Cadastrado com sucesso");
-            history.push("/");
-          } else {
-            alert("Não foi possivel efetuar o cadastro");
-          }
-        })
-        .catch((err) => console.error(err));
-    }
-  }
-
-  const uploadFile = (event) => {
-    event.preventDefault();
-
-    let formdata = new FormData();
-
-    formdata.append("arquivo", event.target.files[0]);
-
-    fetch(`${uri}/api/Usuario/Image`, {
-      method: "POST",
-      body: formdata,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setCaminho(data);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  function View() {
-    if (
-      (CaminhoImagem == "" && CaminhoImagem.length < 3) ||
-      CaminhoImagem === undefined
-    ) {
-      return (
-        <img className="imagemCadastro" src={Userimg} alt="Imagem de perfil" />
-      );
-    } else if (CaminhoImagem.length > 3) {
-      return (
-        <img
-          className="imagemCadastro"
-          src={`${uri}/ImageBackUp/` + CaminhoImagem}
-          alt="Imagem de perfil"
-        />
-      );
-    }
-  }
-
   return (
     <body>
       <AccessBar />
@@ -203,7 +29,7 @@ export default function CadastroEmpresa() {
               nossa plataforma
             </p>
             <div className="imgCadastroPerfil">
-              {View()}
+              <img className="imagemCadastro" src={Userimg} alt="Imagem de perfil" />
               <br />
               <button className="btSelecionar">
                 <label htmlFor="ButtonImage" className="lbBt">
@@ -211,14 +37,11 @@ export default function CadastroEmpresa() {
                 </label>
               </button>
             </div>
-            <form className="form" onSubmit={salvar}>
+            <form className="form">
               <input
                 type="file"
                 className="none"
                 id="ButtonImage"
-                onChange={(event) => {
-                  uploadFile(event);
-                }}
               />
               <Input
                 id="responsibleName"
@@ -230,7 +53,7 @@ export default function CadastroEmpresa() {
                 maxLength={65}
                 minLength={5}
                 required
-                onChange={(e) => SetNomeResponsavel(e.target.value)}
+                
               />
               <Input
                 id="cnpjCadastro"
@@ -245,7 +68,6 @@ export default function CadastroEmpresa() {
                 onKeyPress={(e) => {
                   "return e.charCode >= 48 && e.charCode <= 57";
                 }}
-                onChange={(e) => SetCNPJ(e.target.value)}
               />
 
               <Input
@@ -258,7 +80,6 @@ export default function CadastroEmpresa() {
                 maxLength={254}
                 minLength={5}
                 required
-                onChange={(e) => SetEmailContato(e.target.value)}
               />
 
               <Input
@@ -270,7 +91,6 @@ export default function CadastroEmpresa() {
                 placeholder="CPTM"
                 maxLength={50}
                 required
-                onChange={(e) => SetNomeFantasia(e.target.value)}
               />
 
               <Input
@@ -283,7 +103,6 @@ export default function CadastroEmpresa() {
                 maxLength={50}
                 minLength={5}
                 required
-                onChange={(e) => SetRazaoSocial(e.target.value)}
               />
               <Input
                 id="phoneNumberCadastro"
@@ -295,7 +114,6 @@ export default function CadastroEmpresa() {
                 maxLength={11}
                 minLength={10}
                 required
-                onChange={(e) => SetTelefone(e.target.value)}
               />
 
               <Input
@@ -306,7 +124,6 @@ export default function CadastroEmpresa() {
                 type="number"
                 maxLength={4}
                 minLength={1}
-                onChange={(e) => SetNumFuncionario(e.target.value)}
               />
 
               <Input
@@ -319,7 +136,6 @@ export default function CadastroEmpresa() {
                 maxLength={7}
                 minLength={7}
                 required
-                onChange={(e) => SetNumCNAE(e.target.value)}
               />
 
               <div className="Input">
@@ -331,11 +147,6 @@ export default function CadastroEmpresa() {
                   id="cep"
                   maxLength={8}
                   minLength={8}
-                  onBlur={(e) => {
-                    e.preventDefault();
-                    buscarCep(e.target.value);
-                  }}
-                  onChange={(e) => SetCEP(e.target.value)}
                 />
               </div>
 
@@ -347,7 +158,6 @@ export default function CadastroEmpresa() {
                 type="text"
                 maxLength={155}
                 minLength={5}
-                onChange={(e) => SetLogradouro(e.target.value)}
               />
 
               <div className="Input">
@@ -359,7 +169,6 @@ export default function CadastroEmpresa() {
                   name="address2"
                   maxLength={255}
                   className="cadastre"
-                  onChange={(e) => SetComplemento(e.target.value)}
                 />
               </div>
 
@@ -374,7 +183,6 @@ export default function CadastroEmpresa() {
                   disabled
                   maxLength={150}
                   minLength={5}
-                  onChange={e=> SetCidade(e.target.value)}
                 />
               </div>
 
@@ -389,7 +197,6 @@ export default function CadastroEmpresa() {
                   disabled
                   maxLength={2}
                   minLength={2}
-                  onChange={e=> SetEstado(e.target.value)}
                 />
               </div>
 
@@ -403,7 +210,6 @@ export default function CadastroEmpresa() {
                 maxLength={254}
                 minLength={5}
                 required
-                onChange={(e) => SetEmail(e.target.value)}
               />
 
               <Input
@@ -415,9 +221,6 @@ export default function CadastroEmpresa() {
                 maxLength={15}
                 minLength={9}
                 required
-                autocomplete="new-password"
-                onKeyUp={() => escreverResultado()}
-                onChange={(e) => SetSenha(e.target.value)}
               />
 
               <Input
@@ -429,8 +232,6 @@ export default function CadastroEmpresa() {
                 maxLength={15}
                 minLength={9}
                 required
-                onKeyUp={() => escreverResultado()}
-                onChange={(e) => SetConfirmarSenha(e.target.value)}
               />
 
               <p className="password-matching-text"></p>
@@ -447,8 +248,6 @@ export default function CadastroEmpresa() {
                 <select
                   id="PerguntaCadastroEmpresa"
                   className="select-cadastroCandidato"
-                  onChange={(e) => SetPergunta(e.target.value)}
-                  value={PerguntaSeguranca}
                   required
                 >
                   <option value="0">Selecione uma pergunta de segurança</option>
@@ -490,7 +289,6 @@ export default function CadastroEmpresa() {
                 type="text"
                 placeholder="Meu cachorro se chama..."
                 required
-                onChange={(e) => SetResposta(e.target.value)}
                 maxLength={30}
                 minLength={5}
               />

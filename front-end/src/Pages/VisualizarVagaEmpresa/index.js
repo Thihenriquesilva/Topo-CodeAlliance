@@ -52,7 +52,7 @@ export default function VizualizarVagaEmpresa() {
                 NomeProp={"PJ"}
                 source={imgTipoContrato}
               ></InfoVaga>
-              <InfoVaga NomeProp={"R$4.000"} source={imgSalario}></InfoVaga>
+              <InfoVaga NomeProp={"R$4.000,00"} source={imgSalario}></InfoVaga>
               <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
               <InfoVaga
                 NomeProp={"Desenvolvimento"}

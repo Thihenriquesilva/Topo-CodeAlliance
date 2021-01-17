@@ -165,7 +165,7 @@ export default function ListarCandidatosInscritos() {
                       NomeProp={"CLT"}
                       source={imgTipoContrato}
                     />
-                    <InfoVaga NomeProp={"4.000"} source={imgSalario} />
+                    <InfoVaga NomeProp={"R$4.000,00"} source={imgSalario} />
                     <InfoVaga NomeProp={"Desenvolvimento"} source={imgDesenvolvimento} />
                     <InfoVaga NomeProp={"Presencial"} source={imgGlobal} />
                   </div>

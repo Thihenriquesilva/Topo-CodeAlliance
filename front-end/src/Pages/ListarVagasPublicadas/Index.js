@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 import AccessBar from "../../Components/AccessBar";
@@ -136,7 +136,7 @@ export default function VagasPublicadas() {
                   NomeProp={"CLT"}
                   source={imgTipoContrato}
                 />
-                <InfoVaga NomeProp={"R$4.000"} source={imgSalario} />
+                <InfoVaga NomeProp={"R$4.000,00"} source={imgSalario} />
                 <InfoVaga
                   NomeProp={"Desenvolvimento"}
                   source={imgDesenvolvimento}
@@ -222,7 +222,7 @@ export default function VagasPublicadas() {
                   NomeProp={"CLT"}
                   source={imgTipoContrato}
                 />
-                <InfoVaga NomeProp={"R$4.000"} source={imgSalario} />
+                <InfoVaga NomeProp={"R$5.000,00"} source={imgSalario} />
                 <InfoVaga
                   NomeProp={"Desenvolvimento"}
                   source={imgDesenvolvimento}
@@ -308,7 +308,7 @@ export default function VagasPublicadas() {
                   NomeProp={"CLT"}
                   source={imgTipoContrato}
                 />
-                <InfoVaga NomeProp={"R$4.000"} source={imgSalario} />
+                <InfoVaga NomeProp={"R$2.000,00"} source={imgSalario} />
                 <InfoVaga
                   NomeProp={"Desenvolvimento"}
                   source={imgDesenvolvimento}
@@ -394,7 +394,7 @@ export default function VagasPublicadas() {
                   NomeProp={"CLT"}
                   source={imgTipoContrato}
                 />
-                <InfoVaga NomeProp={"R$4.000"} source={imgSalario} />
+                <InfoVaga NomeProp={"R$5.000,00"} source={imgSalario} />
                 <InfoVaga
                   NomeProp={"Desenvolvimento"}
                   source={imgDesenvolvimento}

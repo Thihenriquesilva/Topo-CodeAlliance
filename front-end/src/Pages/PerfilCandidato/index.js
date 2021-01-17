@@ -81,7 +81,7 @@ export default function PerfilCandidato() {
               <h3>{"Nome da empresa:Code Enterprise"}</h3>
             </div>
             <h3>{"Tipo do contrato:CLT"}</h3>
-            <h3>{"Salario:" + "R$4.000"}</h3>
+            <h3>{"Salario:" + "R$5.000,00"}</h3>
           </div>
 
           <div className="BoxPerfilCandidato">
@@ -90,7 +90,7 @@ export default function PerfilCandidato() {
               <h3>{"Nome da empresa:Code Enterprise"}</h3>
             </div>
             <h3>{"Tipo do contrato:CLT"}</h3>
-            <h3>{"Salario:" + "R$4.000"}</h3>
+            <h3>{"Salario:" + "R$5.000,00"}</h3>
           </div>
 
           <div className="BoxPerfilCandidato">
@@ -99,7 +99,7 @@ export default function PerfilCandidato() {
               <h3>{"Nome da empresa:Code Enterprise"}</h3>
             </div>
             <h3>{"Tipo do contrato:CLT"}</h3>
-            <h3>{"Salario:" + "R$4.000"}</h3>
+            <h3>{"Salario:" + "R$5.000,00"}</h3>
           </div>
         </div>
       </div>

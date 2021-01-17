@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import imgDelete from "../../assets/delete.webp";
 import { useHistory } from "react-router-dom";
 

@@ -99,7 +99,7 @@ export default function BuscarVaga() {
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
                     <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
                     <InfoVaga NomeProp={"CLT"} source={imgTipoContrato} />
-                    <InfoVaga NomeProp={"5.000"} source={imgSalario} />
+                    <InfoVaga NomeProp={"R$5.000,00"} source={imgSalario} />
                     <InfoVaga
                       NomeProp={"Desenvolvimento"}
                       source={imgDesenvolvimento}
@@ -142,7 +142,7 @@ export default function BuscarVaga() {
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
                     <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
                     <InfoVaga NomeProp={"CLT"} source={imgTipoContrato} />
-                    <InfoVaga NomeProp={"5.000"} source={imgSalario} />
+                    <InfoVaga NomeProp={"R$5.000,00"} source={imgSalario} />
                     <InfoVaga
                       NomeProp={"Desenvolvimento"}
                       source={imgDesenvolvimento}
@@ -187,7 +187,7 @@ export default function BuscarVaga() {
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
                     <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
                     <InfoVaga NomeProp={"CLT"} source={imgTipoContrato} />
-                    <InfoVaga NomeProp={"5.000"} source={imgSalario} />
+                    <InfoVaga NomeProp={"R$5.000,00"} source={imgSalario} />
                     <InfoVaga
                       NomeProp={"Desenvolvimento"}
                       source={imgDesenvolvimento}
@@ -232,7 +232,7 @@ export default function BuscarVaga() {
                     <InfoVaga NomeProp={"São Paulo"} source={imgLocalizacao} />
                     <InfoVaga NomeProp={"Júnior"} source={imgFuncao} />
                     <InfoVaga NomeProp={"CLT"} source={imgTipoContrato} />
-                    <InfoVaga NomeProp={"5.000"} source={imgSalario} />
+                    <InfoVaga NomeProp={"R$5.000,00"} source={imgSalario} />
                     <InfoVaga
                       NomeProp={"Desenvolvimento"}
                       source={imgDesenvolvimento}

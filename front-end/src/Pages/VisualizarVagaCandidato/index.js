@@ -45,7 +45,6 @@ export default function VisualizarVaga() {
           </div>
         </section>
 
-        <section className="infoVagaVisualizar">
         <div className="vaga">
           <div className="VagaCompleta">
             <img
@@ -74,7 +73,7 @@ export default function VisualizarVaga() {
                   NomeProp={"CLT"}
                   source={imgTipoContrato}
                 />
-                <InfoVaga NomeProp={"R$4.000"} source={imgSalario} />
+                <InfoVaga NomeProp={"R$4.000,00"} source={imgSalario} />
                 <InfoVaga
                   NomeProp={"Desenvolvimento"}
                   source={imgDesenvolvimento}
@@ -91,7 +90,6 @@ export default function VisualizarVaga() {
             </div>
           </div>
         </div>
-        </section>
 
         <section className="sessao-svempresa">
           <div className="descri-empresa">
