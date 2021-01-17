@@ -1,4 +1,4 @@
-USE TranquiloJobs_Db
+USE Hackathon_Db;
 GO
 
 --DQL
@@ -16,9 +16,6 @@ SELECT * FROM Usuario
 GO
 
 SELECT * FROM Area
-GO
-
-SELECT * FROM Curso
 GO
 
 SELECT * FROM TipoRegimePresencial
@@ -39,8 +36,6 @@ GO
 SELECT * FROM VagaTecnologia
 GO
 
-SELECT * FROM Estagio
-GO
 
 --Lista so os atributos necessarios
 SELECT  v.IdVaga,NomeTecnologia,v.Experiencia, TipoContrato, Salario,RazaoSocial,v.Localidade FROM VagaTecnologia      

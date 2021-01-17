@@ -1,8 +1,8 @@
-CREATE DATABASE TranquiloJobs_Db;
+CREATE DATABASE Hackathon_Db;
 GO
 
 --DDL
-USE TranquiloJobs_Db;
+USE Hackathon_Db;
 GO
 
 CREATE TABLE TipoUsuario (
@@ -23,13 +23,6 @@ NomeArea VARCHAR(35)NOT NULL UNIQUE
 );
 GO
 
-CREATE TABLE Curso (
-IdCurso	  INT PRIMARY KEY IDENTITY,
-NomeCurso VARCHAR (100) NOT NULL UNIQUE,
-TipoCurso VARCHAR (30) NOT NULL,
-IdArea INT FOREIGN KEY REFERENCES Area(IdArea)NOT NULL
-);
-GO
 
 CREATE TABLE StatusInscricao (
 IdStatusInscricao   INT PRIMARY KEY IDENTITY,
@@ -80,7 +73,6 @@ RG					  CHAR (9) NOT NULL,
 CPF					  CHAR (11) NOT NULL UNIQUE,
 Telefone			  VARCHAR (11) NOT NULL UNIQUE,
 LinkLinkedinCandidato VARCHAR (150),
-IdCurso				  INT FOREIGN KEY REFERENCES Curso (IdCurso),
 IdUsuario			  INT FOREIGN KEY REFERENCES Usuario (IdUsuario) NOT NULL UNIQUE,
 );
 GO
@@ -108,15 +100,6 @@ IdArea		       INT FOREIGN KEY REFERENCES Area (IdArea)NOT NULL
 );
 GO
 
-CREATE TABLE Estagio (
-IdEstagio	 INT PRIMARY KEY IDENTITY,
-DataCadastro DATETIME NOT NULL,
-PeriodoEstagio INT NOT NULL,
-IdCandidato  INT FOREIGN KEY REFERENCES Candidato (IdCandidato),
-IdEmpresa	 INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
-);
-GO
-
 CREATE TABLE Inscricao (
 IdInscricao		  INT PRIMARY KEY IDENTITY,
 DataInscricao	  DATETIME NOT NULL,
@@ -135,5 +118,5 @@ GO
 
 
 --Execute estas duas linhas caso queira deletar o banco de dados
-USE MASTER
-DROP DATABASE Db_TechVagas
+USE MASTER;
+DROP DATABASE Hackathon_Db;
